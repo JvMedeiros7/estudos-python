@@ -1,0 +1,1 @@
+from .uteis import mostrar_linha, fatorial, dobro, triplo
