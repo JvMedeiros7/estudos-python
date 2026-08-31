@@ -1,0 +1,6 @@
+
+Poo é uma linguagem de programação que utiliza o conceito de objetos e classes para organizar e estruturar o código. Ela permite a criação de programas mais modularizados, reutilizáveis e fáceis de manter. A programação orientada a objetos (POO) é amplamente utilizada em diversas linguagens, como Python, Java, C++, entre outras.
+
+Ela foi criada com o intuito de simular o mundo real, permitindo que os desenvolvedores possam modelar entidades e suas interações de forma mais intuitiva. A POO se baseia em quatro pilares principais: encapsulamento, herança, polimorfismo e abstração.
+
+Seu objetivo é representar conceitos do mundo real em um ambiente de programação, facilitando a compreensão e a manutenção do código. Através da POO, é possível criar classes que representam objetos, com atributos (características) e métodos (comportamentos), permitindo uma abordagem mais natural e eficiente para o desenvolvimento de software.
