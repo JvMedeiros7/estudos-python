@@ -40,6 +40,18 @@
 
 # O objeto é uma coisa que vem de uma classe  e por ter sido feito por essa classe ela tem comportamento e caracteristicas semelhantes a classe que a criou. Por exemplo, se temos uma classe "Carro" com atributos como "cor" e "modelo", e métodos como "acelerar" e "frear", podemos criar diferentes objetos da classe "Carro", cada um com sua própria cor e modelo, mas todos compartilhando os mesmos métodos de acelerar e frear.
 
+#Exemplo classe carro:
+
+# class Carro:
+#     def __init__(self, cor, modelo):
+#        self.cor = cor  # Atributo cor
+#        self.modelo = modelo  # Atributo modelo
+#     def acelerar(self):  # Método acelerar
+#         print(f"O carro {self.modelo} está acelerando.")
+#    def frear(self):  # Método frear
+#       print(f"O carro {self.modelo} está freando.")
+
+
 # class Biscoito:
 #     def __init__(self, tamanho, massa, peso, cobertura, cozido, temperatura):
 #         self.tamanho = tamanho
