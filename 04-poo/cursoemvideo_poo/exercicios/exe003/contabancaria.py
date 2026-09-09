@@ -27,14 +27,10 @@ class ContaBancaria:
     
 
 c1 = ContaBancaria(1012, "João", 60000)
-
 print(c1.__getstate__())  # Acesso ao estado do objeto c1 usando o método __getstate__
-
 x = float(input("Digite o valor a ser depositado: "))
 c1.depositar(x)
-
 c1.sacar(float(input("Digite o valor a ser sacado: "))) #Aqui declara-se o valor a ser sacado, que será passado como argumento para o método sacar da classe ContaBancaria.
-
 print(c1)
 print(c1.__doc__)  # Acesso à documentação da classe ContaBancaria (docstring) #Dunder Attribute
 
