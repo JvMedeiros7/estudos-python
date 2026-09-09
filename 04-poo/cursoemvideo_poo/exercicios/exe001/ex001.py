@@ -5,7 +5,7 @@
 # atributos (dados) e métodos (comportamentos) os objetos terão.
 
 class Gafanhoto:
-    def __init__(self):  # Método Construtor
+    def __init__(self, n = "vazio", i = 0):  # Método Construtor
         # É chamado automaticamente sempre que um objeto é criado
         # (ex: g1 = Gafanhoto()). Serve para inicializar os
         # atributos de instância com valores padrão.
@@ -13,8 +13,8 @@ class Gafanhoto:
         # Atributos de instância
         # Cada objeto criado a partir da classe terá sua PRÓPRIA
         # cópia desses atributos (g1.nome é diferente de g2.nome).
-        self.nome = ""
-        self.idade = 0
+        self.nome = n
+        self.idade = i
 
     # Métodos de instância
     # Sempre recebem "self" como primeiro parâmetro, que representa
@@ -36,6 +36,11 @@ class Gafanhoto:
         # chamasse g1.mensagem() não teria mais acesso ao texto.
         return f"Olá, meu nome é {self.nome} e tenho {self.idade} anos."
 
+    def __str__(self):
+        # Método especial que define como o objeto será representado
+        # como string (ex: quando usado em print(g1)).
+        return f"Gafanhoto(nome={self.nome}, idade={self.idade})"
+
 
 # ============================================================
 # Declaração de Objetos
@@ -45,9 +50,7 @@ class Gafanhoto:
 
 # ---------------- Objeto 1 ----------------
 
-g1 = Gafanhoto()
-g1.nome = input("Qual seu nome? ")
-g1.idade = int(input("Qual sua idade? "))
+g1 = Gafanhoto("Maria", 20)  # Criação do objeto g1 com nome e idade iniciais
 
 g1.aniversario()  # Chamada do método aniversario (idade +1)
 print(g1.mensagem())  # Chamada do método mensagem (usa o return)
@@ -60,10 +63,7 @@ print(g1.idade)  # Acesso direto ao atributo idade
 # g2 é totalmente independente de g1: alterar g2 não afeta g1,
 # pois cada objeto tem sua própria cópia dos atributos.
 
-g2 = Gafanhoto()
-g2.nome = input("Qual seu nome? ")
-g2.idade = int(input("Qual sua idade? "))
-
+g2 = Gafanhoto("João", 25)  # Criação do objeto g2 com nome e idade iniciais
 g2.aniversario()  # Chamada do método aniversario
 print(g2.mensagem())  # Chamada do método mensagem
 
@@ -78,4 +78,9 @@ print(g2.idade)  # Acesso ao atributo idade
 g3 = Gafanhoto()
 print(g3.mensagem())  # Chamada do método mensagem (com valores padrão)
 
-print(g3.nome)  # Acesso ao atributo nome (ainda "")
+print(g3.nome)  # Acesso ao atributo nome (ainda "vazio")
+
+
+print(g1)  # Chamada do método __str__ (representação como string do objeto g1)
+print(g2)  # Chamada do método __str__ (representação como string do objeto g2)
+print(g3)  # Chamada do método __str__ (representação como string do objeto g3)
