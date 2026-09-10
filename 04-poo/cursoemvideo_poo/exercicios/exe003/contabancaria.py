@@ -1,3 +1,6 @@
+from rich import print
+from rich import inspect
+
 class ContaBancaria:
     """Classe que representa uma conta bancária com atributos de id, nome e saldo."""
 
@@ -20,9 +23,9 @@ class ContaBancaria:
     def sacar(self, valor):
         if valor <= self.saldo:
             self.saldo -= valor
-            print(f"Saque de R${valor:,.2f} realizado com sucesso. \nNovo saldo: R${self.saldo:,.2f}")
+            print(f"\nSaque de R${valor:,.2f} realizado com sucesso. \nNovo saldo: R${self.saldo:,.2f}")
         else:
-            print("Saldo insuficiente para saque.")
+            print("\nSaldo insuficiente para saque.")
         pass
     
 
@@ -34,3 +37,7 @@ c1.sacar(float(input("Digite o valor a ser sacado: "))) #Aqui declara-se o valor
 print(c1)
 print(c1.__doc__)  # Acesso à documentação da classe ContaBancaria (docstring) #Dunder Attribute
 
+
+c = ContaBancaria(111, "Maria", 50000)
+
+inspect(c)  # Inspeciona o objeto c da classe ContaBancaria usando a função inspect do Rich
