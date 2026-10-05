@@ -16,7 +16,7 @@ install()
 
 #Herança em Python
 
-## A herança é um relacionamento entre itens gerais e específicos. A classe pai (superclasse) fornece atributos e métodos que podem ser herdados pelas classes filhas (subclasses). As subclasses podem adicionar novos atributos e métodos ou sobrescrever os existentes.
+## A herança é um relacionamento(E1) entre itens gerais e específicos. A classe pai (superclasse) fornece atributos e métodos que podem ser herdados pelas classes filhas (subclasses). As subclasses podem adicionar novos atributos e métodos ou sobrescrever os existentes.
 
 #Principais vantagens da herança:
 
