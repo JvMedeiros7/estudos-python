@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class BebidaQuente(ABC):
     def __init__(self, nome):
         self.nome = nome
@@ -16,6 +17,7 @@ class BebidaQuente(ABC):
     @abstractmethod
     def preparar(self):
         pass
+
 
 class Cafe(BebidaQuente):
     def __init__(self, nome):
