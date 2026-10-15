@@ -10,7 +10,7 @@ class Personagem(ABC):
     def __init__(self, nome: str, vida: int, golpes: int):
         self.nome = nome
         self.vida = vida
-        self.golpes = golpes
+        self.golpes = []
 
     def atacar(self, alvo: "Personagem"):
         dano = randint(0, self.golpes)

@@ -40,4 +40,4 @@ print(c1.__doc__)  # Acesso à documentação da classe ContaBancaria (docstring
 
 c = ContaBancaria(111, "Maria", 50000)
 
-inspect(c)  # Inspeciona o objeto c da classe ContaBancaria usando a função inspect do Rich
+inspect(c)  # Inspeciona o objeto c da classe ContaBancaria usando a função inspect do Rich 
