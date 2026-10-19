@@ -19,11 +19,13 @@ class ContaBancaria:
 
 
     def depositar(self, valor):
+        valor = abs(valor)  # Garante que o valor seja positivo
         self.__saldo += valor
         print(f"Depósito de R${valor:,.2f} realizado com sucesso. Novo saldo: R${self.__saldo:,.2f}")
         pass
 
     def sacar(self, valor):
+        valor = abs(valor)  # Garante que o valor seja positivo
         if valor <= self.__saldo:
             self.__saldo -= valor
             print(f"\nSaque de R${valor:,.2f} realizado com sucesso. \nNovo saldo: R${self.__saldo:,.2f}")
