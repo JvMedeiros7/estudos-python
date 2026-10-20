@@ -47,3 +47,4 @@
 
 # Getters e Setters são métodos que permitem acessar e modificar atributos de um objeto de forma controlada, mantendo o encapsulamento.
 
+# Também tem outra forma que é pelo @property, que é uma forma mais elegante de criar getters e setters em Python.

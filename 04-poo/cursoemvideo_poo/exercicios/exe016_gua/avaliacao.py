@@ -18,6 +18,9 @@ class Avaliacao:
         else:
             raise ValueError("A nota deve estar entre 0 e 10.")
 
+    @nota.deleter
+    def nota(self): # Metodo deleter para remover o atributo protegido _nota
+        del self._nota
 
 
 
