@@ -1,20 +1,34 @@
 from rich import print
 from rich import inspect
+from hashlib import sha256
 
 class ContaBancaria:
-    """Classe que representa uma conta bancária com atributos de id, nome e saldo."""
+    """Classe que representa uma conta bancária com atributos de _id, nome e saldo."""
    
-    def __init__(self, id, nome, saldo = 0):
-        self.id = id # Public (+): Atributos e métodos públicos podem ser acessados de qualquer lugar, tanto dentro quanto fora da classe.
-        self._nome = nome # Protected (#): Atributos e métodos protegidos são indicados por um único sublinhado ( _ "Em python") e devem ser acessados apenas dentro da classe e suas subclasses. No entanto, ainda podem ser acessados fora da classe, mas é desencorajado.
-        self.__saldo = saldo # Private (-): Atributos e métodos privados são indicados por dois sublinhados ( __ "Em python") e não podem ser acessados diretamente fora da classe. Eles são destinados apenas para uso interno da classe.
-        print(f"\nConta criada com sucesso! \nID: {self.id} \nNome: {self._nome} \nSaldo: [bold blue]R${self.__saldo:,.2f}[/bold blue]")
+    def __init__(self, id: int, nome: str = None, saldo:float = 0, chave: str = None):
+        self._id = id 
+        self._nome = nome 
+        self.__saldo = saldo
+        if chave is None:
+            chave = self.pede_senha() 
+        self.__hash = sha256(chave.encode()).hexdigest()
+        print(f"\nConta criada com sucesso! \n_id: {self._id} \nNome: {self._nome} \nSaldo: [bold blue]R${self.__saldo:,.2f}[/bold blue]")
 
-    def __getstate__(self):
-        return f"\nEstado : id = {self.id}, nome = {self._nome}, saldo = {self.__saldo}"
+    def pede_senha(self):
+
+        from pwinput import pwinput
+        
+        while True:
+            senha = pwinput("Digite uma senha: ", mask="*").strip()
+            if len(senha) < 6:
+                print("A senha deve ter pelo menos 6 caracteres. Tente novamente.")
+            else:
+                break
+
+        return senha
 
     def __str__(self):
-        #return f"A conta {self.id} de {self.nome} tem saldo de R${self.saldo:,.2f}"
+        #return f"A conta {self._id} de {self.nome} tem saldo de R${self.saldo:,.2f}"
         return f"Estado atual da conta :{self.__dict__}"
 
 
